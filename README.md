@@ -7,3 +7,6 @@ This is where you can download the Glyphs Kaizo mod. Right now it only buffs the
 2) Run the installer, click "Add Game Manually", then navigate to your Glyphs executable.
 3) MelonLoader will create a bunch of additonal files and folders in your Glyphs folder and once it is done, drag and drop your GlyphsKaizo.dll into the Mods folder (Get this from the releases page [here](https://github.com/BuffYoda21/Glyphs-Kaizo-Public/releases)).
 4) Run the game. You should see the MelonLoader log pop up and show the mod being loaded.
+
+# Contributing
+This project is now partial open source. If you have any changes you'd like to see or any insights you can submit pull requests to this repository or open an issue here. Unfortunately, there are some parts of the code that the developer of Glyphs does not want made public but the majority of the code is here in this repository.
