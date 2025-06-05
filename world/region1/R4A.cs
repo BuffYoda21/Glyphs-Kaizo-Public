@@ -9,7 +9,7 @@ namespace GlyphsKaizo.World.Region1 {
                 MelonLogger.Error("R4A Room Reference not found!");
                 return;
             }
-            roomReference.transform.Find("SaveConditional").gameObject.SetActive(false);    //Might move to the other side of the pit to force players to go back and grab the save button
+            roomReference.transform.Find("SaveConditional").localPosition = new Vector3(6.25f, 0f, 0f);
         }
         
         private static GameObject roomReference;
