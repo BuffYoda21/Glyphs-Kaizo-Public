@@ -17,7 +17,10 @@ namespace GlyphsKaizo.World.Region1 {
             dashOrb.transform.localPosition = new Vector3(-4.5f, 2.8f, 0f);
             dashOrb.SetActive(true);
             roomReference.transform.Find("Tiles/Door (5)").gameObject.SetActive(false);
-            GameObject button2 = Object.Instantiate(roomReference.transform.Find("Button (1)").gameObject, roomReference.transform);
+            GameObject button1 = roomReference.transform.Find("Button (1)").gameObject;
+            button1.transform.Find("Button").GetComponent<ButtonObj>().type = "dashattack";
+            button1.transform.Find("Button").GetComponent<SpriteRenderer>().color = new Color(0.8396f, 0.7524f, 0.1545f, 1f);
+            GameObject button2 = Object.Instantiate(button1, roomReference.transform);
             button2.name = "Button (2)";
             button2.transform.localPosition = new Vector3(-10.75f, -2.25f, 0f);
             button2.transform.localRotation = Quaternion.Euler(0f, 0f, 270f);
