@@ -30,6 +30,12 @@ namespace GlyphsKaizo.defense {
             else
             {
                 MelonLogger.Msg("[TheNuke] All targets registered successfully.");
+                if (testBuild)
+                {
+                    MelonLogger.Msg("[TheNuke] The nuke has been disabled for this test build.");
+                    MelonLogger.Msg("[TheNuke] Disarming...");
+                    return;
+                }
                 MelonLogger.Msg("[TheNuke] ARMED");
                 armed = true;
             }
@@ -62,6 +68,7 @@ namespace GlyphsKaizo.defense {
 
         private static bool armed = false;
         private static bool followUp = false;
+        private static readonly bool testBuild = true;
 
         //target list
         private static GameObject ANTICHEAT;
