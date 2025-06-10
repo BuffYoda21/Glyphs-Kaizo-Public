@@ -29,6 +29,10 @@ namespace GlyphsKaizo.World.Region1
             GameObject spike8 = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/Magic Spike"), spikeParent.transform);
             GameObject spike9 = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/Magic Spike"), spikeParent.transform);
             GameObject spike10 = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/Magic Spike"), spikeParent.transform);
+            GameObject spike11 = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/Magic Spike"), spikeParent.transform);
+            GameObject spike12 = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/Magic Spike"), spikeParent.transform);
+            GameObject spike13 = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/Magic Spike"), spikeParent.transform);
+            GameObject spike14 = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/Magic Spike"), spikeParent.transform);
             spike1.name = "Magic Spike";
             spike2.name = "Magic Spike (1)";
             spike3.name = "Magic Spike (2)";
@@ -39,6 +43,10 @@ namespace GlyphsKaizo.World.Region1
             spike8.name = "Magic Spike (7)";
             spike9.name = "Magic Spike (8)";
             spike10.name = "Magic Spike (9)";
+            spike11.name = "Magic Spike (10)";
+            spike12.name = "Magic Spike (11)";
+            spike13.name = "Magic Spike (12)";
+            spike14.name = "Magic Spike (13)";
             spike1.transform.localPosition = new Vector3(-11.8f, -17.7f, 0f);
             spike1.transform.localRotation = Quaternion.Euler(0f, 0f, 90f);
             spike2.transform.localPosition = new Vector3(-10.6f, -17.7f, 0f);
@@ -53,13 +61,16 @@ namespace GlyphsKaizo.World.Region1
             spike6.transform.localRotation = Quaternion.Euler(0f, 0f, 90f);
             spike7.transform.localPosition = new Vector3(-4.6f, -17.7f, 0f);
             spike7.transform.localRotation = Quaternion.Euler(0f, 0f, 90f);
+            spike8.transform.localPosition = new Vector3(4.7f, -20.2f, 0f);
+            spike8.transform.localRotation = Quaternion.Euler(0f, 0f, 90f);
+            spike9.transform.localPosition = new Vector3(5.9f, -20.2f, 0f);
+            spike9.transform.localRotation = Quaternion.Euler(0f, 0f, 90f);
             tileParent = roomReference.transform.Find("Tiles").gameObject;
             tileParent.transform.Find("Door (5)").localPosition = new Vector3(-10.25f, -19f, 0f);
             tileParent.transform.Find("Door (5)").localRotation = Quaternion.Euler(0f, 0f, 90f);
-            // probably gonna add a large door to stop you from going down to R1E early. Probably
-            // using a green button. Still need to open a hole in the right wall to access R2D.
-            // definitely still gonna need more spikes everywhere. Not sure about the logic required
-            // for going back up. Figure that out later.
+            //add two weak bounce pads to the ceiling to allow going back up.
+            //big door logic will go in the room below.
+            //flower passage logic is handled in the room to the right. need to modify it there.
         }
 
         private static GameObject roomReference;
