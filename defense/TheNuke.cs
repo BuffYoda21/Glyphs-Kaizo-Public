@@ -68,7 +68,7 @@ namespace GlyphsKaizo.defense {
 
         private static bool armed = false;
         private static bool followUp = false;
-        private static readonly bool testBuild = false;
+        private static readonly bool testBuild = true;
 
         //target list
         private static GameObject ANTICHEAT;

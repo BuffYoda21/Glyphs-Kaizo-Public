@@ -21,6 +21,7 @@ namespace GlyphsKaizo.World.Region1 {
                 initializationTime = Time.time;
                 worldManager = GameObject.Find("KaizoWorldManager").GetComponent<KaizoWorldManager>();
                 worldManager.GetComponent<TheNuke>().RegisterTargets();
+                worldManager.CacheItems();
                 regionReference = GameObject.Find("/World/Region1");
                 if (regionReference == null)
                 {
@@ -31,6 +32,7 @@ namespace GlyphsKaizo.World.Region1 {
                 R2A.Load(regionReference);
                 R3A.Load(regionReference);
                 R4A.Load(regionReference);
+                R1B.Load(regionReference);
                 R2B.Load(regionReference, worldManager);
                 R3B.Load(regionReference);
                 R4B.Load(regionReference);
