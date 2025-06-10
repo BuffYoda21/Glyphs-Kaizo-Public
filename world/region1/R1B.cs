@@ -13,7 +13,7 @@ namespace GlyphsKaizo.World.Region1
                 MelonLogger.Error("R1B Room Reference not found!");
                 return;
             }
-            GameObject respawnPoint = Object.Instantiate(Resources.Load<GameObject>("prefabs/respawn/RespawnPoint"), roomReference.transform);
+            GameObject respawnPoint = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/RespawnPoint"), roomReference.transform);
             respawnPoint.transform.localPosition = new Vector3(6.5f, -1.9f, 0f);
             respawnPoint.name = "RespawnPoint";
             spikeParent = new GameObject("Spikes");
