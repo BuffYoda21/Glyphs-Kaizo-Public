@@ -15,8 +15,11 @@ namespace GlyphsKaizo.World.Region1
                 return;
             }
             GameObject respawnPoint = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/RespawnPoint"), roomReference.transform);
+            GameObject respawnPoint2 = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/RespawnPoint"), roomReference.transform);
             respawnPoint.transform.localPosition = new Vector3(-1f, -2.1f, 0f);
+            respawnPoint2.transform.localPosition = new Vector3(10.7f, -17.4f, 0f);
             respawnPoint.name = "RespawnPoint";
+            respawnPoint2.name = "RespawnPoint (1)";
             spikeParent = new GameObject("Spikes");
             spikeParent.transform.SetParent(roomReference.transform, false);
             GameObject spike1 = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/Magic Spike"), spikeParent.transform);
@@ -28,11 +31,6 @@ namespace GlyphsKaizo.World.Region1
             GameObject spike7 = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/Magic Spike"), spikeParent.transform);
             GameObject spike8 = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/Magic Spike"), spikeParent.transform);
             GameObject spike9 = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/Magic Spike"), spikeParent.transform);
-            GameObject spike10 = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/Magic Spike"), spikeParent.transform);
-            GameObject spike11 = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/Magic Spike"), spikeParent.transform);
-            GameObject spike12 = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/Magic Spike"), spikeParent.transform);
-            GameObject spike13 = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/Magic Spike"), spikeParent.transform);
-            GameObject spike14 = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/Magic Spike"), spikeParent.transform);
             spike1.name = "Magic Spike";
             spike2.name = "Magic Spike (1)";
             spike3.name = "Magic Spike (2)";
@@ -42,11 +40,6 @@ namespace GlyphsKaizo.World.Region1
             spike7.name = "Magic Spike (6)";
             spike8.name = "Magic Spike (7)";
             spike9.name = "Magic Spike (8)";
-            spike10.name = "Magic Spike (9)";
-            spike11.name = "Magic Spike (10)";
-            spike12.name = "Magic Spike (11)";
-            spike13.name = "Magic Spike (12)";
-            spike14.name = "Magic Spike (13)";
             spike1.transform.localPosition = new Vector3(-11.8f, -17.7f, 0f);
             spike1.transform.localRotation = Quaternion.Euler(0f, 0f, 90f);
             spike2.transform.localPosition = new Vector3(-10.6f, -17.7f, 0f);
@@ -68,9 +61,18 @@ namespace GlyphsKaizo.World.Region1
             tileParent = roomReference.transform.Find("Tiles").gameObject;
             tileParent.transform.Find("Door (5)").localPosition = new Vector3(-10.25f, -19f, 0f);
             tileParent.transform.Find("Door (5)").localRotation = Quaternion.Euler(0f, 0f, 90f);
-            //add two weak bounce pads to the ceiling to allow going back up.
-            //big door logic will go in the room below.
-            //flower passage logic is handled in the room to the right. need to modify it there.
+            GameObject bouncePad1 = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/Bounce Box - H"), roomReference.transform);
+            GameObject bouncePad2 = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/Bounce Box - H"), roomReference.transform);
+            bouncePad1.name = "Bouncepad";
+            bouncePad2.name = "Bouncepad (1)";
+            bouncePad1.transform.localPosition = new Vector3(6.5f, -11.6f, 0f);
+            bouncePad2.transform.localPosition = new Vector3(3f, -9.85f, 0f);
+            bouncePad1.transform.localScale = new Vector3(2f, 0.25f, 1f);
+            bouncePad2.transform.localScale = new Vector3(3f, 0.25f, 1f);
+            bouncePad1.GetComponent<BouncePlatform>().xstrength = 0f;
+            bouncePad1.GetComponent<BouncePlatform>().ystrength = 0f;
+            bouncePad2.GetComponent<BouncePlatform>().xstrength = 0f;
+            bouncePad2.GetComponent<BouncePlatform>().ystrength = 0f;
         }
 
         private static GameObject roomReference;
