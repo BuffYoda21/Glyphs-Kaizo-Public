@@ -37,6 +37,7 @@ namespace GlyphsKaizo.World.Region1 {
                 R3B.Load(regionReference);
                 R4B.Load(regionReference);
                 R1C.Load(regionReference);
+                R1E.Load(regionReference);
                 initializationTime = Time.time - initializationTime;
                 MelonLogger.Msg($"Region1 initialization complete in {initializationTime:F2} second(s).");
             }
