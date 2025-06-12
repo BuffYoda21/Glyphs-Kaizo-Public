@@ -5,7 +5,7 @@ using GlyphsKaizo.World;
 using GlyphsKaizo.Bosses.Spearman;
 using GlyphsKaizo.defense;
 
-[assembly: MelonInfo(typeof(GlyphsKaizo.Main), "Glyphs Kaizo", "1.0.0-Dev.6.0", "BuffYoda21")]
+[assembly: MelonInfo(typeof(GlyphsKaizo.Main), "Glyphs Kaizo", "1.0.0-Dev.6.6", "BuffYoda21")]
 [assembly: MelonGame("Vortex Bros.", "GLYPHS")]
 
 namespace GlyphsKaizo {
@@ -30,6 +30,7 @@ namespace GlyphsKaizo {
             worldManager.AddComponent<TheNuke>();
             //obj.AddComponent<TheWatch>();                                         //redundant after the nuke is detonated
             MelonLogger.Msg("Glyphs Kaizo loaded successfully!");
+            Debug.Log("I know you are reading this Landon lolllllll");
             isInitialized = true;
         }
 
