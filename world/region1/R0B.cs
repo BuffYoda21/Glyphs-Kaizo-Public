@@ -21,18 +21,25 @@ namespace GlyphsKaizo.World.Region1 {
             GameObject spike10 = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/Magic Spike"), spikeParent.transform);
             GameObject spike11 = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/Magic Spike"), spikeParent.transform);
             GameObject spike12 = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/Magic Spike"), spikeParent.transform);
-            spike9.transform.localPosition = new Vector3(0f, 0f, 0f);
-            spike10.transform.localPosition = new Vector3(0f, 0f, 0f);
-            spike11.transform.localPosition = new Vector3(0f, 0f, 0f);
-            spike12.transform.localPosition = new Vector3(0f, 0f, 0f);
-            spike9.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
-            spike10.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
-            spike11.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
-            spike12.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+            spike9.transform.localPosition = new Vector3(-1.5f, -4.75f, 0f);
+            spike10.transform.localPosition = new Vector3(-1.5f, -2.75f, 0f);
+            spike11.transform.localPosition = new Vector3(5.5f, -4.75f, 0f);
+            spike12.transform.localPosition = new Vector3(5.5f, -2.75f, 0f);
+            spike9.transform.localRotation = Quaternion.Euler(0f, 0f, 90f);
+            spike10.transform.localRotation = Quaternion.Euler(0f, 0f, 270f);
+            spike11.transform.localRotation = Quaternion.Euler(0f, 0f, 90f);
+            spike12.transform.localRotation = Quaternion.Euler(0f, 0f, 270f);
+            spike9.GetComponent<BoxCollider2D>().size = new Vector2(0.9616f, 0.8216f);
+            spike10.GetComponent<BoxCollider2D>().size = new Vector2(0.9616f, 0.8216f);
+            spike11.GetComponent<BoxCollider2D>().size = new Vector2(0.9616f, 0.8216f);
+            spike12.GetComponent<BoxCollider2D>().size = new Vector2(0.9616f, 0.8216f);
             spike9.name = "Magic Spike (8)";
             spike10.name = "Magic Spike (9)";
             spike11.name = "Magic Spike (10)";
             spike12.name = "Magic Spike (11)";
+            GameObject button = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/Button"), roomReference.transform);
+            button.transform.localPosition = new Vector3(38f, -53f, 0f);
+            button.name = "Button";
             // add call to start the puzzle logic here
         }
 
