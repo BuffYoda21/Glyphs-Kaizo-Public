@@ -22,9 +22,9 @@ namespace GlyphsKaizo.World.Region1 {
             GameObject spike11 = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/Magic Spike"), spikeParent.transform);
             GameObject spike12 = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/Magic Spike"), spikeParent.transform);
             spike9.transform.localPosition = new Vector3(-1.5f, -4.75f, 0f);
-            spike10.transform.localPosition = new Vector3(-1.5f, -2.75f, 0f);
+            spike10.transform.localPosition = new Vector3(-1.5f, -2.25f, 0f);
             spike11.transform.localPosition = new Vector3(5.5f, -4.75f, 0f);
-            spike12.transform.localPosition = new Vector3(5.5f, -2.75f, 0f);
+            spike12.transform.localPosition = new Vector3(5.5f, -2.25f, 0f);
             spike9.transform.localRotation = Quaternion.Euler(0f, 0f, 90f);
             spike10.transform.localRotation = Quaternion.Euler(0f, 0f, 270f);
             spike11.transform.localRotation = Quaternion.Euler(0f, 0f, 90f);
