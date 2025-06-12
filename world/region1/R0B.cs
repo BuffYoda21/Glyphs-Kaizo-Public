@@ -39,7 +39,7 @@ namespace GlyphsKaizo.World.Region1 {
             spike12.name = "Magic Spike (11)";
             GameObject button = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/Button"), roomReference.transform);
             button.transform.localPosition = new Vector3(38f, -53f, 0f);
-            button.name = "Button";
+            button.name = "FragButton";
             // add call to start the puzzle logic here
         }
 
