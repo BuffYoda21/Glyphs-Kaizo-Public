@@ -25,6 +25,7 @@ namespace GlyphsKaizo.Scripts.Puzzles
             button = roomReference.transform.Find("FragButton/Button").gameObject.GetComponents<BoxCollider2D>()[1];
             frag1.SetActive(false);
             player = GameObject.Find("Player").GetComponent<BoxCollider2D>();
+            pc = GameObject.Find("Player").GetComponent<PlayerController>();
         }
 
         public void OnButtonPress()
@@ -32,6 +33,7 @@ namespace GlyphsKaizo.Scripts.Puzzles
             MelonLogger.Msg("Button Pressed");
             triggered = true;
             frag1.SetActive(true);
+            pc.mapDisabled = true;
             explosion = Object.Instantiate(Resources.Load<GameObject>("prefabs/particles/Explosion Ring"), frag1.transform);
             explosion.transform.localPosition = new Vector3(0f, 0f, 0f);
             MelonCoroutines.Start(ButtonTimer());
@@ -47,6 +49,7 @@ namespace GlyphsKaizo.Scripts.Puzzles
         {
             triggered = false;
             frag1.SetActive(false);
+            pc.mapDisabled = false;
         }
 
         public void Update()
@@ -59,6 +62,7 @@ namespace GlyphsKaizo.Scripts.Puzzles
         public BoxCollider2D button;
         public GameObject frag1;
         public BoxCollider2D player;
+        public PlayerController pc;
         public GameObject explosion;
         private bool triggered = false;
     }
