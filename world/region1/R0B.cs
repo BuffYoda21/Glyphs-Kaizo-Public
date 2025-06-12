@@ -1,5 +1,7 @@
 using UnityEngine;
 using MelonLoader;
+using GlyphsKaizo.Scripts.Puzzles;
+using Il2Cpp;
 
 namespace GlyphsKaizo.World.Region1 {
     public class R0B
@@ -39,8 +41,11 @@ namespace GlyphsKaizo.World.Region1 {
             spike12.name = "Magic Spike (11)";
             GameObject button = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/Button"), roomReference.transform);
             button.transform.localPosition = new Vector3(38f, -53f, 0f);
+            button.transform.Find("Button").GetComponent<ButtonObj>().type = "dash";
+            button.transform.Find("Button").GetComponent<ButtonObj>().timePressed = 60f;
+            button.transform.Find("Button").GetComponent<SpriteRenderer>().color = new Color(0f, 0.6059f, 1f, 1f);
             button.name = "FragButton";
-            // add call to start the puzzle logic here
+            roomReference.AddComponent<Frag1>();
         }
 
         public static GameObject roomReference;
