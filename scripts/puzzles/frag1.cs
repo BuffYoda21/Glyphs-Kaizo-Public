@@ -54,7 +54,7 @@ namespace GlyphsKaizo.Scripts.Puzzles
 
         public void Update()
         {
-            if (player.bounds.Intersects(button.bounds) && !triggered)
+            if (player.bounds.Intersects(button.bounds) && !triggered && frag1 != null)
                 OnButtonPress();
         }
 
