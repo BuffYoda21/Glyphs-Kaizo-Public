@@ -23,9 +23,20 @@ namespace GlyphsKaizo.Scripts.Puzzles
                 return;
             }
             button = roomReference.transform.Find("FragButton/Button").gameObject.GetComponents<BoxCollider2D>()[1];
-            frag1.SetActive(false);
             player = GameObject.Find("Player").GetComponent<BoxCollider2D>();
             pc = GameObject.Find("Player").GetComponent<PlayerController>();
+            MelonCoroutines.Start(WaitToDisable());
+        }
+
+        private System.Collections.IEnumerator WaitToDisable() {
+            yield return new WaitForSeconds(0.2f);
+            if(frag1 == null) {
+                MelonLogger.Warning("Fragment 1 could not be found. This could be because the puzzle is already solved or an incorrect reference.");
+                DestroyImmediate(this);
+            }
+            else {
+                frag1.SetActive(false);
+            }
         }
 
         public void OnButtonPress()
