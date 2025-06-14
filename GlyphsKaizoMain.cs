@@ -1,11 +1,13 @@
 using UnityEngine;
 using MelonLoader;
 using Il2CppInterop.Runtime.Injection;
+using GlyphsKaizo;
 using GlyphsKaizo.World;
 using GlyphsKaizo.Bosses.Spearman;
 using GlyphsKaizo.defense;
+using GlyphsKaizo.Scripts.Puzzles;
 
-[assembly: MelonInfo(typeof(GlyphsKaizo.Main), "Glyphs Kaizo", "1.0.0-Dev.6.6", "BuffYoda21")]
+[assembly: MelonInfo(typeof(GlyphsKaizo.Main), "Glyphs Kaizo", "1.0.0-Dev.7.4", "BuffYoda21")]
 [assembly: MelonGame("Vortex Bros.", "GLYPHS")]
 
 namespace GlyphsKaizo {
@@ -24,6 +26,7 @@ namespace GlyphsKaizo {
             ClassInjector.RegisterTypeInIl2Cpp<KaizoSpearBossCoroutineHelper>();
             //ClassInjector.RegisterTypeInIl2Cpp<TheWatch>();                         //redundant after the nuke is detonated
             ClassInjector.RegisterTypeInIl2Cpp<TheNuke>();
+            ClassInjector.RegisterTypeInIl2Cpp<Frag1>();                            //probably going to move puzzle scripts into a seperate puzzle loader later
             GameObject worldManager = new GameObject("KaizoWorldManager");
             UnityEngine.Object.DontDestroyOnLoad(worldManager);
             worldManager.AddComponent<KaizoWorldManager>();

@@ -32,6 +32,7 @@ namespace GlyphsKaizo.World.Region1 {
                 R2A.Load(regionReference);
                 R3A.Load(regionReference);
                 R4A.Load(regionReference);
+                R0B.Load(regionReference);
                 R1B.Load(regionReference);
                 R2B.Load(regionReference, worldManager);
                 R3B.Load(regionReference);
