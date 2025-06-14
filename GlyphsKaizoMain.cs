@@ -1,12 +1,13 @@
 using UnityEngine;
 using MelonLoader;
 using Il2CppInterop.Runtime.Injection;
+using GlyphsKaizo;
 using GlyphsKaizo.World;
 using GlyphsKaizo.Bosses.Spearman;
 using GlyphsKaizo.defense;
 using GlyphsKaizo.Scripts.Puzzles;
 
-[assembly: MelonInfo(typeof(GlyphsKaizo.Main), "Glyphs Kaizo", "1.0.0-Dev.7.2", "BuffYoda21")]
+[assembly: MelonInfo(typeof(GlyphsKaizo.Main), "Glyphs Kaizo", "1.0.0-Dev.7.4", "BuffYoda21")]
 [assembly: MelonGame("Vortex Bros.", "GLYPHS")]
 
 namespace GlyphsKaizo {
