@@ -42,7 +42,7 @@ namespace GlyphsKaizo.World.Region1 {
             GameObject button = Object.Instantiate(Resources.Load<GameObject>("prefabs/platforming/Button"), roomReference.transform);
             button.transform.localPosition = new Vector3(38f, -53f, 0f);
             button.transform.Find("Button").GetComponent<ButtonObj>().type = "dash";
-            button.transform.Find("Button").GetComponent<ButtonObj>().timePressed = 60f;
+            button.transform.Find("Button").GetComponent<ButtonObj>().timePressed = 90f;
             button.transform.Find("Button").GetComponent<SpriteRenderer>().color = new Color(0f, 0.6059f, 1f, 1f);
             button.name = "FragButton";
             roomReference.AddComponent<Frag1>();
