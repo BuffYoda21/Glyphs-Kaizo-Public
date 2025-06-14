@@ -52,14 +52,14 @@ namespace GlyphsKaizo.Scripts.Puzzles
 
         private System.Collections.IEnumerator ButtonTimer()
         {
-            yield return new WaitForSeconds(60f);
+            yield return new WaitForSeconds(90f);
             OnButtonUnpress();
         }
 
         public void OnButtonUnpress()
         {
             triggered = false;
-            frag1.SetActive(false);
+            if(frag1 != null) frag1.SetActive(false);
             pc.mapDisabled = false;
         }
 
@@ -67,6 +67,8 @@ namespace GlyphsKaizo.Scripts.Puzzles
         {
             if (player.bounds.Intersects(button.bounds) && !triggered && frag1 != null)
                 OnButtonPress();
+            else if(triggered && frag1 == null)
+                OnButtonUnpress();
         }
 
         public GameObject roomReference;
