@@ -1,6 +1,5 @@
 using MelonLoader;
 using UnityEngine;
-using Il2CppSystem.Collections.Generic;
 
 namespace GlyphsKaizo.World.Region1
 {
@@ -14,6 +13,5 @@ namespace GlyphsKaizo.World.Region1
             roomReference.transform.Find("Tiles/FlowerHide").gameObject.SetActive(false);
         }
         public static GameObject roomReference;
-        public static List<GameObject> enemies;
     }
 }
