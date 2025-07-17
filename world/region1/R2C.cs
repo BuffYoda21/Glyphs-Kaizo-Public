@@ -8,7 +8,7 @@ namespace GlyphsKaizo.World.Region1
         public static void Load(GameObject regionReference) {
             roomReference = regionReference.transform.Find("(R2C)").gameObject;
             if (!roomReference) {
-                MelonLogger.Error("R0B Room Reference not found!");
+                MelonLogger.Error("R2C Room Reference not found!");
                 return;
             }
             roomReference.transform.Find("Tiles/FlowerHide").gameObject.SetActive(false);

@@ -9,7 +9,7 @@ namespace GlyphsKaizo.World.Region1
         public static void Load(GameObject regionReference) {
             roomReference = regionReference.transform.Find("(R2D)").gameObject;
             if (!roomReference) {
-                MelonLogger.Error("R0B Room Reference not found!");
+                MelonLogger.Error("R2D Room Reference not found!");
                 return;
             }
             GameObject e = roomReference.transform.Find("FloorEnemy").gameObject;
