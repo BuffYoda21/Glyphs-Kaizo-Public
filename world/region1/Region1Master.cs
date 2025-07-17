@@ -20,7 +20,7 @@ namespace GlyphsKaizo.World.Region1 {
             {
                 initializationTime = Time.time;
                 worldManager = GameObject.Find("KaizoWorldManager").GetComponent<KaizoWorldManager>();
-                worldManager.GetComponent<TheNuke>().RegisterTargets();
+                //worldManager.GetComponent<TheNuke>().RegisterTargets();
                 worldManager.CacheItems();
                 regionReference = GameObject.Find("/World/Region1");
                 if (regionReference == null)
