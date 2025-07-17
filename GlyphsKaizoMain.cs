@@ -7,7 +7,7 @@ using GlyphsKaizo.Bosses.Spearman;
 using GlyphsKaizo.defense;
 using GlyphsKaizo.Scripts.Puzzles;
 
-[assembly: MelonInfo(typeof(GlyphsKaizo.Main), "Glyphs Kaizo", "1.0.0-Dev.8.1", "BuffYoda21")]
+[assembly: MelonInfo(typeof(GlyphsKaizo.Main), "Glyphs Kaizo", "1.0.0-Dev.8.2", "BuffYoda21")]
 [assembly: MelonGame("Vortex Bros.", "GLYPHS")]
 
 namespace GlyphsKaizo {
