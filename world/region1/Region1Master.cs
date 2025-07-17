@@ -20,7 +20,7 @@ namespace GlyphsKaizo.World.Region1 {
             {
                 initializationTime = Time.time;
                 worldManager = GameObject.Find("KaizoWorldManager").GetComponent<KaizoWorldManager>();
-                worldManager.GetComponent<TheNuke>().RegisterTargets();
+                //worldManager.GetComponent<TheNuke>().RegisterTargets();
                 worldManager.CacheItems();
                 regionReference = GameObject.Find("/World/Region1");
                 if (regionReference == null)
@@ -38,6 +38,9 @@ namespace GlyphsKaizo.World.Region1 {
                 R3B.Load(regionReference);
                 R4B.Load(regionReference);
                 R1C.Load(regionReference);
+                R2C.Load(regionReference);
+                R2D.Load(regionReference);
+                R3D.Load(regionReference, worldManager);
                 R1E.Load(regionReference);
                 initializationTime = Time.time - initializationTime;
                 MelonLogger.Msg($"Region1 initialization complete in {initializationTime:F2} second(s).");
