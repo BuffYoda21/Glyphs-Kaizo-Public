@@ -14,9 +14,9 @@ namespace GlyphsKaizo.Scripts {
                         output.Add(Object.Instantiate(
                             org,
                             new Vector3(
-                                org.transform.localPosition.x + spacing,
-                                org.transform.localPosition.y,
-                                org.transform.localPosition.z
+                                org.transform.position.x + spacing,
+                                org.transform.position.y,
+                                org.transform.position.z
                             ),
                             Quaternion.Euler(
                                 org.transform.localRotation.x,
@@ -30,9 +30,9 @@ namespace GlyphsKaizo.Scripts {
                         output.Add(Object.Instantiate(
                             org,
                             new Vector3(
-                                org.transform.localPosition.x,
-                                org.transform.localPosition.y + spacing,
-                                org.transform.localPosition.z
+                                org.transform.position.x,
+                                org.transform.position.y + spacing,
+                                org.transform.position.z
                             ),
                             Quaternion.Euler(
                                 org.transform.localRotation.x,
