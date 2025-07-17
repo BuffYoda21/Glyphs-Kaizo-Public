@@ -2,6 +2,7 @@ using MelonLoader;
 using UnityEngine;
 using GlyphsKaizo.Scripts;
 using Il2CppSystem.Collections.Generic;
+using Il2Cpp;
 
 namespace GlyphsKaizo.World.Region1
 {
@@ -13,7 +14,9 @@ namespace GlyphsKaizo.World.Region1
                 return;
             }
             GameObject e = roomReference.transform.Find("FloorEnemy").gameObject;
-            if(e) e.transform.localPosition = new Vector3(e.transform.localPosition.x - 2, e.transform.localPosition.y, e.transform.localPosition.z);
+            if (e) e.transform.localPosition = new Vector3(e.transform.localPosition.x - 2, e.transform.localPosition.y, e.transform.localPosition.z);
+            Object.DestroyImmediate(e?.GetComponent<EnemyFloor>());
+            e?.AddComponent<KaizoFloorEnemy>();
             enemies = Utils.Pattern(e, Utils.axis.X, 3, 2);
         }
         public static GameObject roomReference;
