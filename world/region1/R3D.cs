@@ -7,7 +7,7 @@ namespace GlyphsKaizo.World.Region1 {
     {
         public static void Load(GameObject regionReference, KaizoWorldManager worldManager)
         {
-            roomReference = regionReference.transform.Find("(R3D)(Sword)").gameObject;
+            roomReference = regionReference.transform.Find("(R3D)(sword)").gameObject;
             if (roomReference == null)
             {
                 MelonLogger.Error("R3D Room Reference not found!");
