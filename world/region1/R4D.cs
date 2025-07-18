@@ -16,10 +16,14 @@ namespace GlyphsKaizo.World.Region1
             flyingEnemy1?.AddComponent<KaizoFlyingEnemy>();
             flyingEnemy2 = Object.Instantiate(flyingEnemy1);
             flyingEnemy2.transform.SetParent(roomReference.transform);
-            flyingEnemy2.transform.localPosition = new Vector3(0f, 4f, -2f);
+            flyingEnemy2.transform.localPosition = new Vector3(4f, -2f, 0f);
+            flyingEnemy3 = Object.Instantiate(flyingEnemy1);
+            flyingEnemy3.transform.SetParent(roomReference.transform);
+            flyingEnemy3.transform.localPosition = new Vector3(0f, -20f, 0f);
         }
         public static GameObject roomReference;
         public static GameObject flyingEnemy1;
         public static GameObject flyingEnemy2;
+        public static GameObject flyingEnemy3;
     }
 }
