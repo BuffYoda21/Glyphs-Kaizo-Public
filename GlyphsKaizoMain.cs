@@ -6,7 +6,7 @@ using GlyphsKaizo.Bosses.Spearman;
 using GlyphsKaizo.defense;
 using GlyphsKaizo.Scripts.Puzzles;
 
-[assembly: MelonInfo(typeof(GlyphsKaizo.Main), "Glyphs Kaizo", "1.0.0-Dev.8.6", "BuffYoda21")]
+[assembly: MelonInfo(typeof(GlyphsKaizo.Main), "Glyphs Kaizo", "1.0.0-Dev.9.0", "BuffYoda21")]
 [assembly: MelonGame("Vortex Bros.", "GLYPHS")]
 
 namespace GlyphsKaizo {
@@ -36,6 +36,7 @@ namespace GlyphsKaizo {
             ClassInjector.RegisterTypeInIl2Cpp<KaizoSpearBoss>();                   //probably gonna rework boss loading to a master loader and inject that instead
             ClassInjector.RegisterTypeInIl2Cpp<KaizoSpearBossCoroutineHelper>();
             ClassInjector.RegisterTypeInIl2Cpp<KaizoFloorEnemy>();
+            ClassInjector.RegisterTypeInIl2Cpp<KaizoFlyingEnemy>();
             //ClassInjector.RegisterTypeInIl2Cpp<TheWatch>();
             //ClassInjector.RegisterTypeInIl2Cpp<TheNuke>();
             ClassInjector.RegisterTypeInIl2Cpp<Frag1>();                            //probably going to move puzzle scripts into a seperate puzzle loader later
