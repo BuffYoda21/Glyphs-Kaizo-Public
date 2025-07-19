@@ -5,8 +5,9 @@ using GlyphsKaizo.World;
 using GlyphsKaizo.Bosses.Spearman;
 using GlyphsKaizo.defense;
 using GlyphsKaizo.Scripts.Puzzles;
+using GlyphsKaizo.scripts;
 
-[assembly: MelonInfo(typeof(GlyphsKaizo.Main), "Glyphs Kaizo", "1.0.0-Dev.9.1", "BuffYoda21")]
+[assembly: MelonInfo(typeof(GlyphsKaizo.Main), "Glyphs Kaizo", "1.0.0-Dev.9.2", "BuffYoda21")]
 [assembly: MelonGame("Vortex Bros.", "GLYPHS")]
 
 namespace GlyphsKaizo {
@@ -19,12 +20,13 @@ namespace GlyphsKaizo {
             }
             var harmony = new HarmonyLib.Harmony("GlyphsKaizo.Patches");
             harmony.PatchAll();
-            InjectKaizoClasses();           
+            InjectKaizoClasses();
             GameObject worldManager = new GameObject("KaizoWorldManager");
             UnityEngine.Object.DontDestroyOnLoad(worldManager);
             worldManager.AddComponent<KaizoWorldManager>();
             //worldManager.AddComponent<TheNuke>();
             //obj.AddComponent<TheWatch>();
+            AssetLoader.init();
             MelonLogger.Msg("Glyphs Kaizo loaded successfully!");
             Debug.Log("I know you are reading this Landon lolllllll");
             isInitialized = true;
