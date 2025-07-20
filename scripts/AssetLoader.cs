@@ -1,4 +1,5 @@
 using GlyphsKaizo.Bosses.Spearman;
+using GlyphsKaizo.scripts.Assets;
 using GlyphsKaizo.Scripts.Puzzles;
 using GlyphsKaizo.World;
 using Il2Cpp;
@@ -12,13 +13,14 @@ namespace GlyphsKaizo.scripts {
             UnityEngine.Object.DontDestroyOnLoad(assetParent);
             square = Resources.Load<GameObject>("prefabs/betweenrooms/Room1  _ _").transform.Find("wall").GetComponent<SpriteRenderer>().sprite;
             ClassInjector.RegisterTypeInIl2Cpp<KaizoWorldManager>();
-            ClassInjector.RegisterTypeInIl2Cpp<KaizoSpearBoss>();                   //probably gonna rework boss loading to a master loader and inject that instead
+            ClassInjector.RegisterTypeInIl2Cpp<KaizoSpearBoss>();
             ClassInjector.RegisterTypeInIl2Cpp<KaizoSpearBossCoroutineHelper>();
             ClassInjector.RegisterTypeInIl2Cpp<KaizoFloorEnemy>();
             ClassInjector.RegisterTypeInIl2Cpp<KaizoFlyingEnemy>();
             //ClassInjector.RegisterTypeInIl2Cpp<TheWatch>();
             //ClassInjector.RegisterTypeInIl2Cpp<TheNuke>();
-            ClassInjector.RegisterTypeInIl2Cpp<Frag1>();                            //probably going to move puzzle scripts into a seperate puzzle loader later
+            ClassInjector.RegisterTypeInIl2Cpp<Frag1>();
+            ClassInjector.RegisterTypeInIl2Cpp<Laser>();
             initalized = true;
         }
 
@@ -38,7 +40,7 @@ namespace GlyphsKaizo.scripts {
             GameObject laser = new GameObject("BigLaser");
             laser.transform.SetParent(assetParent.transform);
             laser.SetActive(false);
-            laser.transform.localScale = new Vector3(1f, 200f, 1f);
+            laser.transform.localScale = new Vector3(0.05f, 200f, 1f);
             BoxCollider2D bc = laser.AddComponent<BoxCollider2D>();
             bc.size = new Vector2(1f, 1f);
             bc.isTrigger = true;
@@ -50,6 +52,8 @@ namespace GlyphsKaizo.scripts {
             sr.sprite = square;
             sr.size = new Vector2(1f, 1f);
             sr.color = new Color(1f, 0f, 0f, .6f);
+            Laser laserScript = laser.AddComponent<Laser>();
+            laserScript.camHover = GameObject.Find("Main Camera Parent")?.GetComponent<Hover>();
             return laser;
         }
 
