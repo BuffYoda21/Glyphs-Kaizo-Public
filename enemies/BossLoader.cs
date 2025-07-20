@@ -12,10 +12,17 @@ namespace GlyphsKaizo.enemies {
             MonoBehaviour bossAI = DetectBoss();
             switch (bossAI) {
                 case DashBoss dashBoss:
-                    dashBoss.gameObject.AddComponent<KaizoDashBoss>();
+                    if (dashBoss.gameObject.GetComponent<KaizoDashBoss>()) return;
+                    KaizoDashBoss kaizoDashBoss = dashBoss.gameObject.AddComponent<KaizoDashBoss>();
+                    kaizoDashBoss.init();
+                    kaizoDashBoss.onPhase3 = dashBoss.onPhase3;
+                    kaizoDashBoss.orbparent = dashBoss.orbparent;
+                    kaizoDashBoss.orbs = dashBoss.orbs;
+                    kaizoDashBoss.orbspeed = dashBoss.orbspeed;
+                    kaizoDashBoss.spike = dashBoss.spike;
                     break;
             }
-            if (bossAI) Object.Destroy(bossAI);
+            if (bossAI) Object.DestroyImmediate(bossAI);
         }
 
         //Add more boss detection as needed
