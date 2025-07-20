@@ -14,15 +14,26 @@ namespace GlyphsKaizo.enemies {
                 case DashBoss dashBoss:
                     if (dashBoss.gameObject.GetComponent<KaizoDashBoss>()) return;
                     KaizoDashBoss kaizoDashBoss = dashBoss.gameObject.AddComponent<KaizoDashBoss>();
-                    kaizoDashBoss.init();
-                    kaizoDashBoss.onPhase3 = dashBoss.onPhase3;
                     kaizoDashBoss.orbparent = dashBoss.orbparent;
-                    kaizoDashBoss.orbs = dashBoss.orbs;
+                    GameObject orb1 = kaizoDashBoss.orbparent.transform.Find("AttackOrb").gameObject;
+                    GameObject orb2 = kaizoDashBoss.orbparent.transform.Find("AttackOrb (1)").gameObject;
+                    orb1.AddComponent<KaizoAttackOrb>();
+                    DestroyImmediate(orb1.GetComponent<DashBossAttackOrb>());
+                    orb2.AddComponent<KaizoAttackOrb>();
+                    DestroyImmediate(orb2.GetComponent<DashBossAttackOrb>());
+                    orb1.GetComponent<KaizoAttackOrb>().init();
+                    orb2.GetComponent<KaizoAttackOrb>().init();
+                    kaizoDashBoss.init();
+                    kaizoDashBoss.orbs = new KaizoAttackOrb[2];
+                    kaizoDashBoss.orbs[0] = orb1.GetComponent<KaizoAttackOrb>();
+                    kaizoDashBoss.orbs[1] = orb2.GetComponent<KaizoAttackOrb>();
+                    kaizoDashBoss.onPhase3 = dashBoss.onPhase3;
                     kaizoDashBoss.orbspeed = dashBoss.orbspeed;
                     kaizoDashBoss.spike = dashBoss.spike;
+                    kaizoDashBoss.bb = dashBoss.bb;
                     break;
             }
-            if (bossAI) Object.DestroyImmediate(bossAI);
+            if (bossAI) DestroyImmediate(bossAI);
         }
 
         //Add more boss detection as needed
