@@ -5,13 +5,14 @@ namespace GlyphsKaizo.scripts {
         public static void init() {
             assetParent = new GameObject("KaizoCustomAssets");
             UnityEngine.Object.DontDestroyOnLoad(assetParent);
+            square = Resources.Load<GameObject>("prefabs/betweenrooms/Room1  _ _").transform.Find("wall").GetComponent<SpriteRenderer>().sprite;
             initalized = true;
         }
 
         public static GameObject Load(string name) {
             if (!initalized) init();
             switch (name) {
-                case "bigLaser": return LoadBigLaser();
+                case "BigLaser": return LoadBigLaser();
             }
             return null;
         }
@@ -33,7 +34,7 @@ namespace GlyphsKaizo.scripts {
             ab.damage = 35;
             ab.multihit = true;
             SpriteRenderer sr = laser.AddComponent<SpriteRenderer>();
-            sr.sprite = Resources.Load<GameObject>("prefabs/betweenrooms/Room1  _ _").transform.Find("wall").GetComponent<SpriteRenderer>().sprite;
+            sr.sprite = square;
             sr.size = new Vector2(1f, 1f);
             sr.color = new Color(1f, 0f, 0f, .6f);
             return laser;
@@ -41,5 +42,6 @@ namespace GlyphsKaizo.scripts {
 
         public static GameObject assetParent;
         public static bool initalized = false;
+        public static Sprite square;
     }
 }
