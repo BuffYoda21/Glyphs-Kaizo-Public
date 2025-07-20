@@ -28,7 +28,7 @@ namespace GlyphsKaizo.scripts.Assets {
             if (charging) {
                 if (Time.time > warningTimer) {
                     durationTimer = Time.time + duration;
-                    this.transform.localScale = new Vector3(1f, this.transform.localScale.y, 1f);
+                    this.transform.localScale = new Vector3(width, this.transform.localScale.y, 1f);
                     camHover.enabled = true;
                     camShake = true;
                     camShakeTimer = Time.time + camShakeDuration;
@@ -53,6 +53,7 @@ namespace GlyphsKaizo.scripts.Assets {
         public float warningTime = 1.5f;
         public float durationTimer = 0f;
         public float warningTimer = 0f;
+        public int width = 1;
         public AttackBox ab;
         public SpriteRenderer sr;
         public BoxCollider2D bc;
