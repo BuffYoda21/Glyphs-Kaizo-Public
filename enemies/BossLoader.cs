@@ -24,10 +24,10 @@ namespace GlyphsKaizo.enemies {
             Scene scene = SceneManager.GetActiveScene();
             switch (scene.name) {
                 case "Game":
-                    bossAI = GameObject.Find("World/Region1/Runic Construct(R3E)/DashBoss").GetComponent<DashBoss>();
+                    bossAI = GameObject.Find("World/Region1/Runic Construct(R3E)/DashBoss")?.GetComponent<DashBoss>();
                     break;
                 case "Memory":
-                    bossAI = GameObject.Find("World/Construct Memory/Runic Construct(R3E)/DashBoss").GetComponent<DashBoss>();
+                    bossAI = GameObject.Find("World/Construct Memory/Runic Construct(R3E)/DashBoss")?.GetComponent<DashBoss>();
                     break;
             }
             if (bossAI && bossAI.isActiveAndEnabled)
