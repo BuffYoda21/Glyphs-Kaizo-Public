@@ -48,6 +48,7 @@ namespace GlyphsKaizo.scripts {
             BoxCollider2D bc = laser.AddComponent<BoxCollider2D>();
             bc.size = new Vector2(1f, 1f);
             bc.isTrigger = true;
+            bc.enabled = false;
             AttackBox ab = laser.AddComponent<AttackBox>();
             ab.attackType = "enemy";
             ab.damage = 35;
