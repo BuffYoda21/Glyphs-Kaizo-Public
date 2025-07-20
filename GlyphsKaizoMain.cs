@@ -2,6 +2,7 @@ using UnityEngine;
 using MelonLoader;
 using GlyphsKaizo.World;
 using GlyphsKaizo.scripts;
+using GlyphsKaizo.enemies;
 
 [assembly: MelonInfo(typeof(GlyphsKaizo.Main), "Glyphs Kaizo", "1.0.0-Dev.9.5", "BuffYoda21")]
 [assembly: MelonGame("Vortex Bros.", "GLYPHS")]
@@ -20,6 +21,7 @@ namespace GlyphsKaizo {
             GameObject worldManager = new GameObject("KaizoWorldManager");
             UnityEngine.Object.DontDestroyOnLoad(worldManager);
             worldManager.AddComponent<KaizoWorldManager>();
+            worldManager.AddComponent<BossLoader>();
             //worldManager.AddComponent<TheNuke>();
             //obj.AddComponent<TheWatch>();
             MelonLogger.Msg("Glyphs Kaizo loaded successfully!");
