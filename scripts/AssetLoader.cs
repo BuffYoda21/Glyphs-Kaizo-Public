@@ -17,6 +17,7 @@ namespace GlyphsKaizo.scripts {
             ClassInjector.RegisterTypeInIl2Cpp<KaizoSpearBossCoroutineHelper>();
             ClassInjector.RegisterTypeInIl2Cpp<KaizoFloorEnemy>();
             ClassInjector.RegisterTypeInIl2Cpp<KaizoFlyingEnemy>();
+            ClassInjector.RegisterTypeInIl2Cpp<KaizoDashBoss>();
             //ClassInjector.RegisterTypeInIl2Cpp<TheWatch>();
             //ClassInjector.RegisterTypeInIl2Cpp<TheNuke>();
             ClassInjector.RegisterTypeInIl2Cpp<Frag1>();
