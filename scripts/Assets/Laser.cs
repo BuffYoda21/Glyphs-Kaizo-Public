@@ -16,7 +16,8 @@ namespace GlyphsKaizo.scripts.Assets {
 
         public void Update() {
             if (firing && Time.time > durationTimer) {
-                camHover.enabled = false;
+                if (camShake)
+                    camHover.enabled = false;
                 Destroy(this.gameObject);
             }
             if (!charging && !firing) {
@@ -29,14 +30,23 @@ namespace GlyphsKaizo.scripts.Assets {
                     durationTimer = Time.time + duration;
                     this.transform.localScale = new Vector3(1f, this.transform.localScale.y, 1f);
                     camHover.enabled = true;
+                    camShake = true;
+                    camShakeTimer = Time.time + camShakeDuration;
                     bc.enabled = true;
                     firing = true;
                     charging = false;
                 }
             }
+            if (camShake && Time.time > camShakeTimer) {
+                camHover.enabled = false;
+                camShake = false;
+            }
         }
 
         public Hover camHover;
+        public bool camShake = false;
+        public float camShakeTimer = 0f;
+        public float camShakeDuration = 0.25f;
         public bool charging = false;
         public bool firing = false;
         public float duration = 1f;
