@@ -1,31 +1,26 @@
 using Il2Cpp;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using HarmonyLib;
+using MelonLoader;
 
 namespace GlyphsKaizo.enemies {
-    [HarmonyPatch]
-    public class BossLoader {
-        [HarmonyPatch(typeof(SceneManager), "Internal_SceneLoaded")]
-        [HarmonyPostfix]
-        public static void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
-            if (scene.handle == lastSceneHandle)
-                return;
-            lastSceneHandle = scene.handle;
-            //MelonLogger.Msg($"Scene loaded: {scene.name}");
+    [RegisterTypeInIl2Cpp]
+    public class BossLoader : MonoBehaviour {
+        public void Update() {
+            Scene scene = SceneManager.GetActiveScene();
             if (scene.name != "Game" && scene.name != "Memory") return;
-            bossAI = DetectBoss();
+            MonoBehaviour bossAI = DetectBoss();
             switch (bossAI) {
                 case DashBoss dashBoss:
-                    bossAI.gameObject.AddComponent<KaizoDashBoss>();
+                    dashBoss.gameObject.AddComponent<KaizoDashBoss>();
                     break;
             }
-            Object.Destroy(bossAI);
+            if (bossAI) Object.Destroy(bossAI);
         }
 
         //Add more boss detection as needed
-        private static MonoBehaviour DetectBoss() {
-            bossAI = null;
+        private MonoBehaviour DetectBoss() {
+            MonoBehaviour bossAI = null;
             Scene scene = SceneManager.GetActiveScene();
             switch (scene.name) {
                 case "Game":
@@ -39,8 +34,5 @@ namespace GlyphsKaizo.enemies {
                 return bossAI;
             return null;
         }
-
-        private static int lastSceneHandle = -1;
-        private static MonoBehaviour bossAI;
     }
 }
