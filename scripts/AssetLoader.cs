@@ -1,4 +1,5 @@
 using GlyphsKaizo.Bosses.Spearman;
+using GlyphsKaizo.enemies;
 using GlyphsKaizo.scripts.Assets;
 using GlyphsKaizo.Scripts.Puzzles;
 using GlyphsKaizo.World;
@@ -18,6 +19,7 @@ namespace GlyphsKaizo.scripts {
             ClassInjector.RegisterTypeInIl2Cpp<KaizoFloorEnemy>();
             ClassInjector.RegisterTypeInIl2Cpp<KaizoFlyingEnemy>();
             ClassInjector.RegisterTypeInIl2Cpp<KaizoDashBoss>();
+            ClassInjector.RegisterTypeInIl2Cpp<BossLoader>();
             //ClassInjector.RegisterTypeInIl2Cpp<TheWatch>();
             //ClassInjector.RegisterTypeInIl2Cpp<TheNuke>();
             ClassInjector.RegisterTypeInIl2Cpp<Frag1>();
