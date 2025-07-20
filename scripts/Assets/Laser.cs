@@ -46,7 +46,7 @@ namespace GlyphsKaizo.scripts.Assets {
         public Hover camHover;
         public bool camShake = false;
         public float camShakeTimer = 0f;
-        public float camShakeDuration = 0.25f;
+        public float camShakeDuration = 0.5f;
         public bool charging = false;
         public bool firing = false;
         public float duration = 1f;
