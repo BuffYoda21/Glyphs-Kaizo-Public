@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using GlyphsKaizo.defense;
+using GlyphsKaizo.scripts;
 using MelonLoader;
 using UnityEngine;
 
@@ -46,6 +48,16 @@ namespace GlyphsKaizo.World {
             }
         }
 
+        // mainly for debugging purposes
+        public GameObject InstantiateKaizoObject(string name) {
+            GameObject obj = AssetLoader.Load(name);
+            if (!obj) obj = Resources.Load<GameObject>(name);
+            if (!obj) return null;
+            objectCache.Add(obj);
+            Instantiate(obj).SetActive(true);
+            return obj;
+        }
+
         //items
         public GameObject sword;
         public GameObject dashOrb;
@@ -53,6 +65,6 @@ namespace GlyphsKaizo.World {
         public GameObject grapple;
         public GameObject dashAttackOrb;
         public GameObject parry;
-
+        public List<GameObject> objectCache = new List<GameObject>();
     }
 }
