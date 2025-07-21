@@ -4,7 +4,7 @@ using GlyphsKaizo.World;
 using GlyphsKaizo.scripts;
 using GlyphsKaizo.enemies;
 
-[assembly: MelonInfo(typeof(GlyphsKaizo.Main), "Glyphs Kaizo", "1.0.0-Dev.9.6", "BuffYoda21")]
+[assembly: MelonInfo(typeof(GlyphsKaizo.Main), "Glyphs Kaizo", "1.0.0-Dev.10.0", "BuffYoda21")]
 [assembly: MelonGame("Vortex Bros.", "GLYPHS")]
 
 namespace GlyphsKaizo {
