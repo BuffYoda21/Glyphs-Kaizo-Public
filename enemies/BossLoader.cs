@@ -20,6 +20,11 @@ namespace GlyphsKaizo.enemies {
                 switch (bossAI) {
                     case DashBoss dashBoss:
                         if (dashBoss.gameObject.GetComponent<KaizoDashBoss>()) return;
+                        if (scene.name == "Game" && !sm.GetBool("hasSave_0"))
+                            bossReward = Object.Instantiate(Resources.Load<GameObject>("prefabs/game/SaveCrystal"));
+                        else
+                            bossReward = null;
+                        bossReward?.SetActive(false);
                         KaizoDashBoss kaizoDashBoss = dashBoss.gameObject.AddComponent<KaizoDashBoss>();
                         kaizoDashBoss.orbparent = dashBoss.orbparent;
                         GameObject orb1 = kaizoDashBoss.orbparent.transform.Find("AttackOrb").gameObject;
@@ -55,7 +60,10 @@ namespace GlyphsKaizo.enemies {
                     explosionClone.SetActive(true);
                     bossActive = false;
                     explosionTimer = Time.time + 3f;
-                    //implement save checking logic here for first save button
+                    if (bossReward) {
+                        bossReward.transform.position = new Vector3(57f, -67f, 0f);
+                        bossReward.SetActive(true);
+                    }
                 } else {
                     bossPos = bossAI.transform.position;
                 }
@@ -79,6 +87,7 @@ namespace GlyphsKaizo.enemies {
             return null;
         }
 
+        GameObject bossReward;
         MonoBehaviour bossAI;
         bool bossActive = false;
         GameObject explosion;
