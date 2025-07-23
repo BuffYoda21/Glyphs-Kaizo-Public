@@ -10,7 +10,7 @@ namespace GlyphsKaizo.enemies {
             Scene scene = SceneManager.GetActiveScene();
             if (scene.name != "Game" && scene.name != "Memory") return;
             if (!pc) pc = GameObject.Find("Player")?.GetComponent<PlayerController>();
-            if (!sm) sm = GameObject.Find("Manager Intro")?.GetComponent<SaveManager>();
+            if (!sm) sm = GameObject.Find("Manager intro")?.GetComponent<SaveManager>();
             if (explosionTimer > 0f && Time.time > explosionTimer) {
                 DestroyImmediate(explosionClone);
                 explosionTimer = 0f;
@@ -72,18 +72,18 @@ namespace GlyphsKaizo.enemies {
 
         //Add more boss detection as needed
         private MonoBehaviour DetectBoss() {
-            bossAI = null;
+            MonoBehaviour ai = null;
             Scene scene = SceneManager.GetActiveScene();
             switch (scene.name) {
                 case "Game":
-                    bossAI = GameObject.Find("World/Region1/Runic Construct(R3E)/DashBoss")?.GetComponent<DashBoss>();
+                    ai = GameObject.Find("World/Region1/Runic Construct(R3E)/DashBoss")?.GetComponent<DashBoss>();
                     break;
                 case "Memory":
-                    bossAI = GameObject.Find("World/Construct Memory/Runic Construct(R3E)/DashBoss")?.GetComponent<DashBoss>();
+                    ai = GameObject.Find("World/Construct Memory/Runic Construct(R3E)/DashBoss")?.GetComponent<DashBoss>();
                     break;
             }
-            if (bossAI && bossAI.isActiveAndEnabled)
-                return bossAI;
+            if (ai && ai.isActiveAndEnabled)
+                return ai;
             return null;
         }
 
